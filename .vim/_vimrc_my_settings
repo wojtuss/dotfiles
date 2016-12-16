@@ -1,0 +1,123 @@
+" fix broken arrow key navigation in insert mode
+set term=builtin_ansi
+
+" Toggle normal and edit mode with Shift+Space
+nnoremap <S-Space> i
+inoremap <S-Space> <Esc>
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set nobackup		" do not keep a backup file, use versions instead
+set ruler		" show the cursor position all the time
+set hlsearch		" switch on highlighting the last used search pattern
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+" Make Esc not to move the cursor to the left
+inoremap <Esc> <Esc>`^
+
+" Change every backslash to a slash
+nnoremap <silent> <Leader>/ :let tmp=@/<Bar>s:\\:/:ge<Bar>let @/=tmp<Bar>noh<CR>
+" Change every slash to a backslash
+nnoremap <silent> <Leader><Bslash> :let tmp=@/<Bar>s:/:\\:ge<Bar>let @/=tmp<Bar>noh<CR>
+
+" Toggle search highlighting
+:noremap <F4> :set hlsearch! hlsearch?<CR>
+
+" Clear highlight
+:nnoremap <CR> :nohlsearch<CR><CR>
+
+" Open each buffer in its own tabpage
+":au BufAdd,BufNewFile,BufRead * nested tab sball
+
+" Easier split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <A-j> gj
+nnoremap <A-k> gk
+nnoremap <C-A-h> <C-w><
+nnoremap <C-A-l> <C-w>>
+nnoremap <C-A-j> <C-w>-
+nnoremap <C-A-k> <C-w>+
+set splitbelow
+set splitright
+
+" Easier tab navigation
+nnoremap th	:tabprev<CR>
+nnoremap tl	:tabnext<CR>	" gt
+nnoremap tk	:tabfirst<CR>	" gT
+nnoremap tj	:tablast<CR>
+nnoremap tn	:tabnew<CR>
+" edit specified file in a new tab:
+nnoremap te	:tabedit<Space>
+" go to tab page N:
+nnoremap tg	:tabn<Space>
+" Move the current tab page to after tab page N.
+" Use zero to make the current tab page the first one.
+" Without N the tab page is made the last one.
+nnoremap tm	:tabm<Space>
+
+nnoremap td	:tabclose<CR>
+nnoremap tf	:<c-w>gf	" Open a new tab page and edit the file name under the cursor.
+nnoremap tF	:<c-w>gF	" Open a new tab page and edit the file name under the cursor
+				" and jump to the line number following the file name.
+
+" Jump to the matching object (parenthesis, brackets, etc.) and visually select all the text in between
+"noremap % v%
+
+" Delete entire word in insert mode
+:imap <C-d> <C-[>diwi
+
+" Toggle showing line numbers
+:nmap <C-N> :set invnumber<CR>
+
+" Show line number
+set number
+
+" Keep always 10 lines above and below visible
+:set scrolloff=10
+
+" Let all vim sessions share the same X selection buffer
+set clipboard=unnamed
+
+" vim-gitgutter
+set updatetime=250
+
+" Show 80th line mark
+set colorcolumn=81
+
+" File explorer
+nnoremap <C-A-e> :Explore<CR>
+nnoremap <C-A-r> :Rexplore<CR>
+nnoremap <C-A-s> :Sexplore<CR>
+nnoremap <C-A-v> :Vexplore<CR>
+
+" undotree
+nnoremap <F5> :UndotreeToggle<cr>
+if has("persistent_undo")
+	set undodir=~/.undodir/
+	set undofile
+endif
+
+" Insert newline without entering insert mode
+nnoremap <S-Enter> maO<Esc>`a
+nnoremap <CR> mao<Esc>`a
+
+" vim-smooth-scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
