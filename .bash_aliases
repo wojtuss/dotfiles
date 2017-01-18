@@ -46,5 +46,5 @@ alias gpf='gp -f '
 alias gpo='gp origin HEAD'
 alias gpfo='gpf origin HEAD'
 
-source .bash_aliases_NVML
+source ~/.bash_aliases_NVML
 
