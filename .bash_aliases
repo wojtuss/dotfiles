@@ -45,6 +45,7 @@ alias gp='git push '
 alias gpf='gp -f '
 alias gpo='gp origin HEAD'
 alias gpfo='gpf origin HEAD'
+alias gg='git grep'
 
 source ~/.bash_aliases_NVML
 

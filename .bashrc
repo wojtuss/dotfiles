@@ -143,4 +143,8 @@ __git_complete grs _git_reset
 __git_complete grh _git_reset
 __git_complete gp _git_push
 __git_complete gpf _git_push
+__git_complete gg _git_grep
 
+
+# added by travis gem
+[ -f /home/wojtuss/.travis/travis.sh ] && source /home/wojtuss/.travis/travis.sh
