@@ -88,9 +88,6 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-" MY OPTIONS:
-source ~/.vim/_vimrc_my_settings
-
 " YouCompleteMe for NVML
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
@@ -99,4 +96,7 @@ execute pathogen#infect()
 
 " NERD Commenter
 filetype plugin on
+
+" MY OPTIONS:
+source ~/.vim/_vimrc_my_settings
 
