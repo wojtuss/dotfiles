@@ -27,6 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-smooth-scroll'
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,3 +93,10 @@ source ~/.vim/_vimrc_my_settings
 
 " YouCompleteMe for NVML
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+" Pathogen - vim plugins manager
+execute pathogen#infect()
+
+" NERD Commenter
+filetype plugin on
+
