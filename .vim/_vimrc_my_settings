@@ -71,9 +71,11 @@ nnoremap tg	:tabn<Space>
 nnoremap tm	:tabm<Space>
 
 nnoremap td	:tabclose<CR>
-nnoremap tf	:<c-w>gf	" Open a new tab page and edit the file name under the cursor.
-nnoremap tF	:<c-w>gF	" Open a new tab page and edit the file name under the cursor
-				" and jump to the line number following the file name.
+" Open a new tab page and edit the file name under the cursor.
+nnoremap tf	:<C-w>gf
+" Open a new tab page and edit the file name under the cursor
+" and jump to the line number following the file name.
+nnoremap tF	:<C-w>gF
 
 " Jump to the matching object (parenthesis, brackets, etc.) and visually select all the text in between
 "noremap % v%

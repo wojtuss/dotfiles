@@ -12,6 +12,7 @@ function drmin() { docker rmi $(docker images -a | grep "^<none>" | awk '{print 
 #Bash
 alias fixpaste='printf "\e[?2004l"'
 alias ls='ls -1 --color=auto'
+alias ls.='ls -a'
 
 # Vim
 #function gvim () { command gvim --remote-tab-silent "$@" || command gvim "$@"; }
