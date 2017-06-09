@@ -135,3 +135,5 @@ vnoremap <A-k> :m '<-2<CR>gv
 " The NERD Tree
 nnoremap <F6> :NERDTreeToggle<CR>
 
+" The NERD Commenter
+let NERDSpaceDelims=1

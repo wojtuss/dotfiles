@@ -28,6 +28,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -96,6 +99,10 @@ execute pathogen#infect()
 
 " NERD Commenter
 filetype plugin on
+
+" vim-airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
 
 " MY OPTIONS:
 source ~/.vim/_vimrc_my_settings
