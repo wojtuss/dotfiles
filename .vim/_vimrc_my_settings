@@ -4,6 +4,9 @@ set term=builtin_ansi
 " Toggle normal and edit mode with Shift+Space
 nnoremap <S-Space> i
 inoremap <S-Space> <Esc>
+" or with AltGr+i
+nnoremap → i
+inoremap → <Esc>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -117,6 +120,9 @@ endif
 " Insert newline without entering insert mode
 nnoremap <S-Enter> maO<Esc>`a
 nnoremap <CR> mao<Esc>`a
+
+" Find visually selected text
+vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 
 " vim-smooth-scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
