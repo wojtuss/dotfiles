@@ -17,6 +17,7 @@ alias ls.='ls -a'
 # Vim
 #function gvim () { command gvim --remote-tab-silent "$@" || command gvim "$@"; }
 #alias gvim='gvim -p --remote-tab-silent'
+alias v='vim'
 
 # Git
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
