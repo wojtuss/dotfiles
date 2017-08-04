@@ -1,4 +1,5 @@
 "set term=builtin_ansi	" fix broken arrow key navigation in insert mode
+set term=xterm-256color
 "set ttymouse=xterm	" Let mouse position the cursor (enable character-mode mouse)
 
 " Toggle normal and edit mode with Shift+Space
@@ -115,8 +116,8 @@ if has("persistent_undo")
 endif
 
 " Insert newline without entering insert mode
-nnoremap <S-Tab> maO<Esc>`a
-nnoremap <Tab> mao<Esc>`a
+nnoremap ą maO<Esc>`a
+nnoremap ” mao<Esc>`a
 
 " Find visually selected text
 vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
@@ -134,16 +135,16 @@ inoremap <C-y> <C-x><C-y>
 nnoremap <A-j> :m .+1<CR>
 inoremap <A-j> <ESC>:m .+1<CR>gi
 vnoremap <A-j> :m '>+1<CR>gv
-nnoremap j :m .+1<CR>
-inoremap j <ESC>:m .+1<CR>gi
-vnoremap j :m '>+1<CR>gv
+nnoremap ə :m .+1<CR>
+inoremap ə <ESC>:m .+1<CR>gi
+vnoremap ə :m '>+1<CR>gv
 " up
 nnoremap <A-k> :m .-2<CR>
 inoremap <A-k> <ESC>:m .-2<CR>gi
 vnoremap <A-k> :m '<-2<CR>gv
-nnoremap k :m .-2<CR>
-inoremap k <ESC>:m .-2<CR>gi
-vnoremap k :m '<-2<CR>gv
+nnoremap … :m .-2<CR>
+inoremap … <ESC>:m .-2<CR>gi
+vnoremap … :m '<-2<CR>gv
 
 " The NERD Tree
 nnoremap <F6> :NERDTreeToggle<CR>
