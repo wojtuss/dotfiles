@@ -155,3 +155,11 @@ nnoremap <F6> :NERDTreeToggle<CR>
 
 " The NERD Commenter
 let NERDSpaceDelims=1
+
+" A plugin for using man in vim
+" Use Shift+k on a keyword to see its man page
+runtime! ftplugin/man.vim
+set keywordprg=:Man
+
+" For Vim to be your default man pages viewer (+ changes in .bashrc)
+let $PAGER=''
