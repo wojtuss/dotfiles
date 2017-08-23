@@ -146,6 +146,10 @@ nnoremap … :m .-2<CR>
 inoremap … <ESC>:m .-2<CR>gi
 vnoremap … :m '<-2<CR>gv
 
+" swap ][ and ]]
+nnoremap ][ ]]
+nnoremap ]] ][
+
 " The NERD Tree
 nnoremap <F6> :NERDTreeToggle<CR>
 
