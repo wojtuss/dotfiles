@@ -20,6 +20,7 @@ alias ls.='ls -a'
 alias v='vim'
 
 # Git
+alias git='PAGER= git'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias gitk='gitk --all& '
 alias gk='gitk '
@@ -29,6 +30,7 @@ alias gb='git branch '
 alias gc='git commit -m '
 alias gca='git commit -a -m '
 alias gd='git diff '
+alias gdt='git difftool '
 alias go='git checkout '
 alias gl='git log '
 alias gf='git fetch '
@@ -48,6 +50,8 @@ alias gpf='gp -f '
 alias gpo='gp origin HEAD'
 alias gpfo='gpf origin HEAD'
 alias gg='git grep'
+
+alias sudolast='sudo $(history -p \!\!)'
 
 source ~/.bash_aliases_NVML
 

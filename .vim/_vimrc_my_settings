@@ -135,16 +135,20 @@ inoremap <C-y> <C-x><C-y>
 nnoremap <A-j> :m .+1<CR>
 inoremap <A-j> <ESC>:m .+1<CR>gi
 vnoremap <A-j> :m '>+1<CR>gv
-nnoremap ə :m .+1<CR>
-inoremap ə <ESC>:m .+1<CR>gi
-vnoremap ə :m '>+1<CR>gv
+"nnoremap ə :m .+1<CR>
+"inoremap ə <ESC>:m .+1<CR>gi
+"vnoremap ə :m '>+1<CR>gv
+set <m-j>=j
+nnoremap <m-j> :m .+1<CR>
 " up
 nnoremap <A-k> :m .-2<CR>
 inoremap <A-k> <ESC>:m .-2<CR>gi
 vnoremap <A-k> :m '<-2<CR>gv
-nnoremap … :m .-2<CR>
-inoremap … <ESC>:m .-2<CR>gi
-vnoremap … :m '<-2<CR>gv
+"nnoremap … :m .-2<CR>
+"inoremap … <ESC>:m .-2<CR>gi
+"vnoremap … :m '<-2<CR>gv
+set <m-k>=k
+nnoremap <m-k> :m .-2<CR>
 
 " swap ][ and ]]
 nnoremap ][ ]]
@@ -152,9 +156,40 @@ nnoremap ]] ][
 
 " The NERD Tree
 nnoremap <F6> :NERDTreeToggle<CR>
+noremap <Leader>t :NERDTreeFind<CR>
 
 " The NERD Commenter
 let NERDSpaceDelims=1
+
+" easytags
+" open definition in a new tab
+nnoremap <silent> <Leader><C-]> <C-w><C-]><C-w>T
+
+" go forward
+set <m-l>=l
+nnoremap <m-l> <C-i>
+" go back
+set <m-h>=h
+nnoremap <m-h> <C-o>
+
+" cscope
+function! CsNvml()
+	:cd /home/wojtuss/wojtuss/nvml
+	:! cscope -Rb -f /home/wojtuss/wojtuss/cscope.nvml.out
+	:cd -
+	:cs reset
+	:cs add /home/wojtuss/wojtuss/cscope.nvml.out
+endfunction
+command! CsNvml call CsNvml()
+nnoremap <F9> :call CsNvml()<CR>
+" find the symbol
+nnoremap <silent> gs :cscope find s <cword><CR>
+set <m-s>=s
+nnoremap <m-s> :cscope find s <cword><CR>
+" find the callers of the function
+nnoremap <silent> gc :cscope find c <cword><CR>
+set <S-m-h>=H
+nnoremap <S-m-h> :cscope find c <cword><CR>
 
 " A plugin for using man in vim
 " Use Shift+k on a keyword to see its man page
@@ -163,3 +198,11 @@ set keywordprg=:Man
 
 " For Vim to be your default man pages viewer (+ changes in .bashrc)
 let $PAGER=''
+
+" Git: quit from difftool
+if &diff
+	map Q :cquit<CR>
+	map q :qa<CR>
+	syntax off
+	colorscheme mycolorscheme
+endif

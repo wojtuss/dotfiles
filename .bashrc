@@ -135,7 +135,7 @@ mkdircd()
 # For Vim to be your default man pages viewer
 export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
-    -c 'map <SPACE> <C-D>' -c 'map b <C-U>' -\""
+    -c 'set nonumber' -c 'set cc=' -\""
 
 source ~/.git-completion.bash
 __git_complete gs _git_status

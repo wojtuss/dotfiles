@@ -33,6 +33,8 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -105,6 +107,13 @@ filetype plugin on
 " vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+
+" easytags
+let g:easytags_file = '~/.vim/tags'
+let g:easytags_async = 1
+
+" cscope
+"set tags=tags;%HOME
 
 " MY OPTIONS:
 source ~/.vim/_vimrc_my_settings
