@@ -52,6 +52,9 @@ alias gpfo='gpf origin HEAD'
 alias gg='git grep'
 
 alias sudolast='sudo $(history -p \!\!)'
+alias psg='ps ax | grep'
 
-source ~/.bash_aliases_NVML
+if [ -f ~/.bash_aliases_NVML ]; then
+	. ~/.bash_aliases_NVML
+fi
 
