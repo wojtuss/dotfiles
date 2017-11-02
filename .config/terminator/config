@@ -1,0 +1,35 @@
+[global_config]
+[keybindings]
+  go_down = <Primary><Shift>j
+  go_left = <Primary><Shift>h
+  go_next = <Primary><Shift>n
+  go_right = <Primary><Shift>l
+  go_up = <Primary><Shift>k
+  layout_launcher = None
+  move_tab_left = <Primary><Alt>comma
+  move_tab_right = <Primary><Alt>period
+  next_tab = <Primary>period
+  page_down = <Shift>Page_Down
+  page_down_half = None
+  page_up = <Shift>Page_Up
+  page_up_half = None
+  prev_tab = <Primary>comma
+  reset = None
+  switch_to_tab_1 = <Primary>1
+  switch_to_tab_10 = <Primary>2
+  switch_to_tab_2 = <Primary>2
+  switch_to_tab_3 = <Primary>3
+  switch_to_tab_4 = <Primary>4
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    scrollback_infinite = True
