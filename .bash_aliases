@@ -58,3 +58,6 @@ if [ -f ~/.bash_aliases_NVML ]; then
 	. ~/.bash_aliases_NVML
 fi
 
+# TensorFlow
+alias tensorflow_activate='. ~/tensorflow/bin/activate'
+alias tensorflow_deactivate='deactivate'
