@@ -214,3 +214,8 @@ let &t_EI = "\<Esc>[2 q"
 
 " Cdc = change to directory of the current file
 command Cdc cd %:p:h
+
+" WatchForChanges to autoread changed files
+source ~/.vim/_vimrc_WatchForChanges
+let autoreadargs={'autoread':1}
+execute WatchForChanges("*",autoreadargs)
