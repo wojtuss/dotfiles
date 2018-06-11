@@ -26,9 +26,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'valloric/listtoggle'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
@@ -37,6 +39,12 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'mbbill/undotree'
+Plugin 'klen/python-mode'
+Plugin 'majutsushi/tagbar'
+Plugin 'konfekt/fastfold'
+Plugin 'mechatroner/minimal_gdb'
+" Installed manually (Pathogen):
+" Plugin 'tmhedberg/simplyfold'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -116,6 +124,9 @@ let g:easytags_async = 1
 
 " cscope
 "set tags=tags;%HOME
+
+" disable folding
+set nofoldenable
 
 " MY OPTIONS:
 source ~/.vim/_vimrc_my_settings

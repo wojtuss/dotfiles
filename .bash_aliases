@@ -42,9 +42,11 @@ alias grih^^='gri HEAD^^'
 alias grih^^^='gri HEAD^^^'
 alias grih^^^^='gri HEAD^^^^'
 alias grium='gri upstream/master'
+alias griud='gri upstream/develop'
 alias grs='git reset '
 alias grh='grs --hard '
 alias grhum='grh upstream/master'
+alias grhud='grh upstream/develop'
 alias gp='git push '
 alias gpf='gp -f '
 alias gpo='gp origin HEAD'
@@ -54,10 +56,18 @@ alias gg='git grep'
 alias sudolast='sudo $(history -p \!\!)'
 alias psg='ps ax | grep'
 
+alias reload_bash='. ~/.bashrc'
+alias .b='. ~/.bashrc'
+
 if [ -f ~/.bash_aliases_NVML ]; then
 	. ~/.bash_aliases_NVML
+fi
+
+if [ -f ~/.bash_aliases_SB ]; then
+	. ~/.bash_aliases_SB
 fi
 
 # TensorFlow
 alias tensorflow_activate='. ~/tensorflow/bin/activate'
 alias tensorflow_deactivate='deactivate'
+

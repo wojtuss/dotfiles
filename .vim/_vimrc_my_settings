@@ -35,7 +35,7 @@ nnoremap <silent> <Leader>/ :let tmp=@/<Bar>s:\\:/:ge<Bar>let @/=tmp<Bar>noh<CR>
 nnoremap <silent> <Leader><Bslash> :let tmp=@/<Bar>s:/:\\:ge<Bar>let @/=tmp<Bar>noh<CR>
 
 " Toggle search highlighting
-noremap <F4> :set hlsearch! hlsearch?<CR>
+" noremap <F4> :set hlsearch! hlsearch?<CR>
 
 " Open each buffer in its own tabpage
 ":au BufAdd,BufNewFile,BufRead * nested tab sball
@@ -102,6 +102,11 @@ set updatetime=250
 " Show 80th line mark
 set colorcolumn=81
 
+" Highlight the line with cursor
+set cursorline
+hi CursorLine cterm=NONE ctermbg=235
+" for colors see http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+
 " File explorer
 ""nnoremap <C-A-e> :Explore<CR>
 ""nnoremap <C-A-r> :Rexplore<CR>
@@ -118,6 +123,9 @@ endif
 " Insert newline without entering insert mode
 nnoremap ą maO<Esc>`a
 nnoremap ” mao<Esc>`a
+
+" Insert a new line character without entering insert mode
+" nnoremap <CR> i<CR><Esc>`^
 
 " Find visually selected text
 vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
@@ -155,8 +163,11 @@ nnoremap ][ ]]
 nnoremap ]] ][
 
 " The NERD Tree
-nnoremap <F6> :NERDTreeToggle<CR>
-noremap <Leader>t :NERDTreeFind<CR>
+" nnoremap <F6> :NERDTreeToggle<CR>
+" noremap <Leader>t :NERDTreeFind<CR>
+nnoremap <F6> :NERDTreeTabsToggle<CR>
+noremap <Leader>t :NERDTreeTabsFind<CR>
+let NERDTreeShowHidden=1
 
 " The NERD Commenter
 let NERDSpaceDelims=1
@@ -164,6 +175,21 @@ let NERDSpaceDelims=1
 " easytags
 " open definition in a new tab
 nnoremap <silent> <Leader><C-]> <C-w><C-]><C-w>T
+
+" python-mode
+let g:pymode = 1
+let g:pymode_motion = 1
+" nnoremap <F3> :let g:pymode = 1 - g:pymode<Bar>echo "g:pymode =" g:pymode<CR>
+
+" SimplyLFold
+let g:SimplylFold_docstring_preview = 1
+nnoremap æ za
+nnoremap Æ zA
+nnoremap <F8> :set foldmethod=manual foldmethod?<CR>
+nnoremap <F9> :set foldmethod=expr foldmethod?<CR>
+
+" tagbar
+nnoremap <F7> :TagbarToggle<CR>
 
 " go forward
 set <m-l>=l
@@ -173,15 +199,15 @@ set <m-h>=h
 nnoremap <m-h> <C-o>
 
 " cscope
-function! CsNvml()
-	:cd /home/wojtuss/wojtuss/nvml
-	:! cscope -Rb -f /home/wojtuss/wojtuss/cscope.nvml.out
-	:cd -
-	:cs reset
-	:cs add /home/wojtuss/wojtuss/cscope.nvml.out
-endfunction
-command! CsNvml call CsNvml()
-nnoremap <F9> :call CsNvml()<CR>
+" function! CsNvml()
+	" :cd /home/wojtuss/wojtuss/nvml
+	" :! cscope -Rb -f /home/wojtuss/wojtuss/cscope.nvml.out
+	" :cd -
+	" :cs reset
+	" :cs add /home/wojtuss/wojtuss/cscope.nvml.out
+" endfunction
+" command! CsNvml call CsNvml()
+" nnoremap <F9> :call CsNvml()<CR>
 " find the symbol
 nnoremap <silent> gs :cscope find s <cword><CR>
 set <m-s>=s
@@ -215,7 +241,38 @@ let &t_EI = "\<Esc>[2 q"
 " Cdc = change to directory of the current file
 command! Cdc cd %:p:h
 
+" Ctrl+R - insert current directory name
+inoremap \pwd <C-R>=getcwd()<CR>
+
 " WatchForChanges to autoread changed files
 source ~/.vim/_vimrc_WatchForChanges
 let autoreadargs={'autoread':1}
 execute WatchForChanges("*",autoreadargs)
+
+" Close file without saving
+nnoremap π ZQ
+" Close file saving
+nnoremap ż ZZ
+
+" Vim filename completion
+set wildmenu
+set wildmode=longest,list
+set wildignore+=*.a,*.o
+set wildignore+=*~,*.swp,*.tmp
+
+" You Complete Me (YCM)
+nnoremap <leader>rs :YcmRestartServer<CR>
+nnoremap <leader>fc :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>fi :YcmCompleter FixIt<CR>
+nnoremap <leader>gy :YcmCompleter GetType<CR>
+
+" listtoggle
+let g:lt_quickfix_list_toggle_map = '<F3>'
+let g:lt_location_list_toggle_map = '<F4>'
+
+

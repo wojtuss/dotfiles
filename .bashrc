@@ -116,6 +116,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_aliases_AIPG ]; then
+    . ~/.bash_aliases_AIPG
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -153,6 +157,8 @@ __git_complete gp _git_push
 __git_complete gpf _git_push
 __git_complete gg _git_grep
 
+# Set vi-mode for bash
+# set -o vi
 
 # added by travis gem
 [ -f /home/wojtuss/.travis/travis.sh ] && source /home/wojtuss/.travis/travis.sh
