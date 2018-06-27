@@ -52,6 +52,8 @@ alias gpf='gp -f '
 alias gpo='gp origin HEAD'
 alias gpfo='gpf origin HEAD'
 alias gg='git grep'
+# list files modified in the commit:
+alias gdtr='git diff-tree -r --no-commit-id --name-only'
 
 alias sudolast='sudo $(history -p \!\!)'
 alias psg='ps ax | grep'
