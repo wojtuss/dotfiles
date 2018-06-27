@@ -67,7 +67,13 @@ if [ -f ~/.bash_aliases_SB ]; then
 	. ~/.bash_aliases_SB
 fi
 
+if [ -f ~/.bash_aliases_AIPG ]; then
+    . ~/.bash_aliases_AIPG
+fi
+
 # TensorFlow
 alias tensorflow_activate='. ~/tensorflow/bin/activate'
 alias tensorflow_deactivate='deactivate'
 
+# GNU screen
+alias sls='screen -ls'

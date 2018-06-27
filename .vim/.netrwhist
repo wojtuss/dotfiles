@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/wojtuss'
+let g:netrw_dirhist_2='/home/wojtuss/Downloads/eclipse-installer/readme'
+let g:netrw_dirhist_3='/etc'
+let g:netrw_dirhist_4='/'
+let g:netrw_dirhist_5='/home/wojtuss/.vim'
+let g:netrw_dirhist_6='/home/wojtuss'
+let g:netrw_dirhist_7='/home'
+let g:netrw_dirhist_8='/'
