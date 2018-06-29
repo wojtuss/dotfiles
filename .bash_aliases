@@ -61,3 +61,10 @@ fi
 # TensorFlow
 alias tensorflow_activate='. ~/tensorflow/bin/activate'
 alias tensorflow_deactivate='deactivate'
+
+# tmux
+alias t='tmux new -s'
+alias tls='tmux ls'
+alias ta='tmux a -t'
+alias ts='tmux switch -t'
+alias td='tmux detach'
