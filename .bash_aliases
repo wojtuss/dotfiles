@@ -73,9 +73,23 @@ if [ -f ~/.bash_aliases_AIPG ]; then
     . ~/.bash_aliases_AIPG
 fi
 
+if [ -f ~/.bash_aliases_paddle ]; then
+    . ~/.bash_aliases_paddle
+fi
+
 # TensorFlow
 alias tensorflow_activate='. ~/tensorflow/bin/activate'
 alias tensorflow_deactivate='deactivate'
 
 # GNU screen
+alias s='screen -S'
 alias sls='screen -ls'
+alias sx='screen -x'
+
+# tmux
+alias t='tmux new -s'
+alias tls='tmux ls'
+alias ta='tmux a -t'
+alias ts='tmux switch -t'
+alias td='tmux detach'
+

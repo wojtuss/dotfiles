@@ -32,7 +32,7 @@ vbell on
 vbell_msg "   Wuff  ----  Wuff!!  "
 
 # define a bigger scrollback, default is 100 lines
-defscrollback 1024
+defscrollback 100000
 
 # ------------------------------------------------------------------------------
 # SCREEN KEYBINDINGS

@@ -275,4 +275,10 @@ nnoremap <leader>gy :YcmCompleter GetType<CR>
 let g:lt_quickfix_list_toggle_map = '<F3>'
 let g:lt_location_list_toggle_map = '<F4>'
 
-
+" Global Gtags
+nnoremap <leader>r :GtagsCursor<CR> :copen<CR>
+nnoremap <leader>n :cn<CR>
+nnoremap <leader>p :cp<CR>
+let Gtags_Auto_Update = 1
+let Gtags_No_Auto_Jump = 1
+let Gtags_Close_When_Single = 1
