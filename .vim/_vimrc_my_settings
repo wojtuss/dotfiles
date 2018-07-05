@@ -62,6 +62,11 @@ nnoremap tl	:tabnext<CR>	" gt
 nnoremap tk	:tabfirst<CR>	" gT
 nnoremap tj	:tablast<CR>
 nnoremap tn	:tabnew<CR>
+" Moving tabs to the left/right
+nnoremap Th	:-tabmove<CR>
+nnoremap Tl	:+tabmove<CR>
+nnoremap T0	:0tabmove<CR>
+nnoremap T$	:$tabmove<CR>
 " edit specified file in a new tab:
 nnoremap te	:tabedit<Space>
 " go to tab page N:
@@ -163,11 +168,12 @@ nnoremap ][ ]]
 nnoremap ]] ][
 
 " The NERD Tree
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let NERDTreeShowHidden=1
 " nnoremap <F6> :NERDTreeToggle<CR>
 " noremap <Leader>t :NERDTreeFind<CR>
 nnoremap <F6> :NERDTreeTabsToggle<CR>
 noremap <Leader>t :NERDTreeTabsFind<CR>
-let NERDTreeShowHidden=1
 
 " The NERD Commenter
 let NERDSpaceDelims=1
