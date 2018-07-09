@@ -267,8 +267,11 @@ nnoremap ż ZZ
 " Vim filename completion
 set wildmenu
 set wildmode=longest,list
+" set wildmode=list:full
 set wildignore+=*.a,*.o
 set wildignore+=*~,*.swp,*.tmp
+" let finding files in subdirectiories of the current directory
+set path=.,**
 
 " You Complete Me (YCM)
 nnoremap <leader>rs :YcmRestartServer<CR>

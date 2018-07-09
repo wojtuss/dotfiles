@@ -58,6 +58,20 @@ alias gg='git grep'
 # list files modified in the commit:
 alias gdtr='git diff-tree -r --no-commit-id --name-only'
 
+
+alias cs='config status'
+alias ca='config add'
+alias cb='config branch'
+alias cc='config commit -m'
+alias cca='config commit -a -m'
+alias cdiff='config diff'
+alias cdt='config difftool'
+alias co='config checkout'
+alias cl='config log'
+alias cf='config fetch'
+alias cpull='config pull'
+
+
 alias sudolast='sudo $(history -p \!\!)'
 alias psg='ps ax | grep'
 
