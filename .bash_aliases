@@ -70,6 +70,7 @@ alias co='config checkout'
 alias cl='config log'
 alias cf='config fetch'
 alias cpull='config pull'
+alias cpush='config push'
 
 
 alias sudolast='sudo $(history -p \!\!)'
