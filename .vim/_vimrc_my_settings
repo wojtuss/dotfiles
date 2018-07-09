@@ -30,9 +30,9 @@ if !exists(":DiffOrig")
 endif
 
 " Change every backslash to a slash
-nnoremap <silent> <Leader>/ :let tmp=@/<Bar>s:\\:/:ge<Bar>let @/=tmp<Bar>noh<CR>
+" nnoremap <silent> <Leader>/ :let tmp=@/<Bar>s:\\:/:ge<Bar>let @/=tmp<Bar>noh<CR>
 " Change every slash to a backslash
-nnoremap <silent> <Leader><Bslash> :let tmp=@/<Bar>s:/:\\:ge<Bar>let @/=tmp<Bar>noh<CR>
+" nnoremap <silent> <Leader><Bslash> :let tmp=@/<Bar>s:/:\\:ge<Bar>let @/=tmp<Bar>noh<CR>
 
 " Toggle search highlighting
 " noremap <F4> :set hlsearch! hlsearch?<CR>
@@ -289,3 +289,8 @@ nnoremap <leader>p :cp<CR>
 let Gtags_Auto_Update = 1
 let Gtags_No_Auto_Jump = 1
 let Gtags_Close_When_Single = 1
+
+" EasyMotion
+map ŋ <Plug>(easymotion-prefix)
+map ś <Plug>(easymotion-s)
+let g:EasyMotion_smartcase = 1

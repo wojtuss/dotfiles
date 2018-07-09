@@ -43,6 +43,7 @@ Plugin 'klen/python-mode'
 Plugin 'majutsushi/tagbar'
 Plugin 'konfekt/fastfold'
 Plugin 'mechatroner/minimal_gdb'
+Plugin 'easymotion/vim-easymotion'
 " Installed manually (Pathogen):
 " Plugin 'tmhedberg/simplyfold'
 
