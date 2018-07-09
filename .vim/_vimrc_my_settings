@@ -270,8 +270,19 @@ set wildmode=longest,list
 " set wildmode=list:full
 set wildignore+=*.a,*.o
 set wildignore+=*~,*.swp,*.tmp
+
+" find
+" the uppercase variants start the search from the directory of the current
+" file for better performance
+nnoremap ,f :find *
+nnoremap ,F :find <C-R>=expand('%:p:h').'/**/*'<CR>
+nnoremap ,s :sfind *
+nnoremap ,S :sfind <C-R>=expand('%:p:h').'/**/*'<CR>
+nnoremap ,v :vert sfind *
+nnoremap ,V :vert sfind <C-R>=expand('%:p:h').'/**/*'<CR>
 " let finding files in subdirectiories of the current directory
 set path=.,**
+
 
 " You Complete Me (YCM)
 nnoremap <leader>rs :YcmRestartServer<CR>
