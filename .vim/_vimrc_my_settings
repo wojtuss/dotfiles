@@ -269,7 +269,11 @@ set wildmenu
 set wildmode=longest,list
 " set wildmode=list:full
 set wildignore+=*.a,*.o
-set wildignore+=*~,*.swp,*.tmp
+set wildignore+=*.swp,*.bak,*.tmp
+set wildignore+=*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.min.*
+set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
+set wildignore+=tags,cscope.*
+set wildignore+=*.tar.*
 
 " find
 " the uppercase variants start the search from the directory of the current
