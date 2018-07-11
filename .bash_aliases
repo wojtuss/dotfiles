@@ -22,7 +22,7 @@ alias v='vim'
 # Git
 alias git='PAGER= git'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias gitk='gitk --all& '
+# alias gitk='gitk --all& '
 alias gk='gitk '
 alias gs='git status '
 alias ga='git add '
