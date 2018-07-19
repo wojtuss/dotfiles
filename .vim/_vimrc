@@ -44,6 +44,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'konfekt/fastfold'
 Plugin 'mechatroner/minimal_gdb'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'kshenoy/vim-signature'
 " Installed manually (Pathogen):
 " Plugin 'tmhedberg/simplyfold'
 

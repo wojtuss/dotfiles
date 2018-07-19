@@ -315,3 +315,9 @@ let Gtags_Close_When_Single = 1
 map ŋ <Plug>(easymotion-prefix)
 map ś <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
+
+" minimal gdb
+nnoremap <leader>bs :MinGDBToggleBP<CR>
+nnoremap <leader>bl :MinGDBListAll<CR>
+nnoremap <leader>bD :MinGDBDeleteAll<CR>
+nnoremap <leader>br :MinGDBRefreshFile<CR>
