@@ -111,3 +111,5 @@ alias ta='tmux a -t'
 alias ts='tmux switch -t'
 alias td='tmux detach'
 
+# YouCompleteMe
+alias cmake_ycm='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
