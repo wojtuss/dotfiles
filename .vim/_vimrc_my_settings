@@ -129,8 +129,8 @@ if has("persistent_undo")
 endif
 
 " Insert newline without entering insert mode
-nnoremap ą maO<Esc>`a
-nnoremap ” mao<Esc>`a
+nnoremap ą mzO<Esc>`zdmz
+nnoremap ” mzo<Esc>`zdmz
 
 " Insert a new line character without entering insert mode
 " nnoremap <CR> i<CR><Esc>`^
