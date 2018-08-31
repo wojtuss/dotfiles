@@ -37,6 +37,10 @@ endif
 " Toggle search highlighting
 " noremap <F4> :set hlsearch! hlsearch?<CR>
 
+" do not move the cursor when highlighing
+" nnoremap * *``
+nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
+
 " Open each buffer in its own tabpage
 ":au BufAdd,BufNewFile,BufRead * nested tab sball
 
