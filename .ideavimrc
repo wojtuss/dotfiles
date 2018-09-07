@@ -1,0 +1,24 @@
+" Toggle normal and edit mode with Shift+Space
+" `^ makes Esc do not move the cursor to the left 
+nnoremap <S-Space> i
+inoremap <S-Space> <Esc>`^
+" or with AltGr+i
+nnoremap → i
+inoremap → <Esc>`^
+
+" Show 80th line mark
+set colorcolumn=81
+
+" Insert newline without entering insert mode
+nnoremap ą maO<Esc>`a
+nnoremap ” mao<Esc>`a
+
+" Close file without saving
+nnoremap π ZQ
+" Close file saving
+nnoremap ż ZZ
+
+set scrolloff=10
+set ignorecase
+set hlsearch
+
