@@ -46,11 +46,15 @@ Plugin 'mechatroner/minimal_gdb'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kshenoy/vim-signature'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
 " Installed manually (Pathogen):
 " Plugin 'tmhedberg/simplyfold'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+call glaive#Install()
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
