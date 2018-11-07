@@ -58,6 +58,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# add git stuff to the prompt
 source ~/.git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
@@ -65,14 +66,76 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
-if [ "$color_prompt" = yes ]; then
-#    PS1='\n${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
-    PS1='\n\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\n\$ '
-else
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='\n\u@\h:\w$(__git_ps1 " (%s)")\n\$ '
-fi
+
+# define a new prompt
+
+# add run time of the last command to the prompt
+timer_now() {
+	date +%s%N
+}
+
+timer_start() {
+	timer=${timer:-$(timer_now)}
+}
+
+timer_stop() {
+    local delta_us=$((($(timer_now) - $timer) / 1000))
+    local us=$((delta_us % 1000))
+    local ms=$(((delta_us / 1000) % 1000))
+    local s=$(((delta_us / 1000000) % 60))
+    local m=$(((delta_us / 60000000) % 60))
+    local h=$((delta_us / 3600000000))
+    # Goal: always show around 3 digits of accuracy
+    if ((h > 0)); then timer_show=${h}h${m}m
+    elif ((m > 0)); then timer_show=${m}m${s}s
+    elif ((s >= 10)); then timer_show=${s}.$((ms / 100))s
+    elif ((s > 0)); then timer_show=${s}.$(printf %03d $ms)s
+    elif ((ms >= 100)); then timer_show=${ms}ms
+    elif ((ms > 0)); then timer_show=${ms}.$((us / 100))ms
+    else timer_show=${us}us
+    fi
+    unset timer
+}
+
+set_my_PS() {
+    Last_Command=$? # Must come first!
+    if [ "$color_prompt" = yes ]; then
+	    Blue=$'\033[01;34m'
+	    White=$'\033[01;37m'
+	    Red=$'\033[01;31m'
+	    Green=$'\033[01;32m'
+	    Reset=$'\033[00m'
+    fi
+    FancyX=$'\u2718'
+    Checkmark=$'\u2714'
+    Runner=$'🏃'
+    
+    if [ "$USER" == "wojtuss" ]; then
+	    my_name=$Runner
+    else
+	    my_name=$USER
+    fi
+
+    PS1="\n$Reset[$Last_Command "
+    echo $Last_Command
+    if [[ $Last_Command == 0 ]]; then
+	    PS1+="$Green$Checkmark "
+    else
+	    PS1+="$Red$FancyX "
+    fi
+
+    timer_stop
+    PS1+="$Reset($timer_show)] "
+    PS1+=" ${Green}${my_name}@\h${Reset}:${Blue}\w${Reset}"
+    PS1+=$(__git_ps1 " (%s)")
+    PS1+="\n\$ "
+}
+
+trap 'timer_start' DEBUG
+PROMPT_COMMAND="set_my_PS"
+
 #unset color_prompt force_color_prompt
+
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
