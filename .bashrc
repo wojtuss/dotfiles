@@ -117,7 +117,6 @@ set_my_PS() {
     fi
 
     PS1="\n$Reset[$Last_Command "
-    echo $Last_Command
     if [[ $Last_Command == 0 ]]; then
 	    PS1+="$Green$Checkmark "
     else
@@ -132,7 +131,7 @@ set_my_PS() {
 }
 
 trap 'timer_start' DEBUG
-PROMPT_COMMAND="set_my_PS"
+PROMPT_COMMAND='set_my_PS'
 
 #unset color_prompt force_color_prompt
 
