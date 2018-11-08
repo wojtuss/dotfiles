@@ -125,7 +125,7 @@ set_my_PS() {
 
     timer_stop
     PS1+="$Reset($timer_show)] "
-    PS1+=" ${Green}${my_name}@\h${Reset}:${Blue}\w${Reset}"
+    PS1+="${Green}${my_name}@\h${Reset}:${Blue}\w${Reset}"
     PS1+=$(__git_ps1 " (%s)")
     PS1+="\n\$ "
 }
