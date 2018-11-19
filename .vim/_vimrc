@@ -49,6 +49,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
+Plugin 'vim-utils/vim-man'
 " Installed manually (Pathogen):
 " Plugin 'tmhedberg/simplyfold'
 
