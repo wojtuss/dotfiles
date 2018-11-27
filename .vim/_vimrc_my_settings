@@ -2,6 +2,8 @@
 set term=xterm-256color
 "set ttymouse=xterm	" Let mouse position the cursor (enable character-mode mouse)
 
+set ttyfast
+
 " Toggle normal and edit mode with Shift+Space
 " `^ makes Esc do not move the cursor to the left 
 nnoremap <S-Space> i
