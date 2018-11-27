@@ -10,6 +10,9 @@ inoremap <S-Space> <Esc>`^
 nnoremap → i
 inoremap → <Esc>`^
 
+" remove delay after Esc
+set timeoutlen=1000 ttimeoutlen=0
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
