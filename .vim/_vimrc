@@ -50,6 +50,7 @@ Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'vim-utils/vim-man'
+Plugin 'thinca/vim-submode'
 " Installed manually (Pathogen):
 " Plugin 'tmhedberg/simplyfold'
 

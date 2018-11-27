@@ -49,13 +49,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-"nnoremap <A-j> gj
-"nnoremap <A-k> gk
-" Resize: doesn't work in terminal
-"nnoremap <C-A-h> <C-w><
-"nnoremap <C-A-l> <C-w>>
-"nnoremap <C-A-j> <C-w>-
-"nnoremap <C-A-k> <C-w>+
 
 set splitbelow
 set splitright
@@ -71,6 +64,8 @@ nnoremap Th	:-tabmove<CR>
 nnoremap Tl	:+tabmove<CR>
 nnoremap T0	:0tabmove<CR>
 nnoremap T$	:$tabmove<CR>
+nnoremap ≤	:-tabmove<CR>
+nnoremap ≥	:+tabmove<CR>
 " edit specified file in a new tab:
 nnoremap te	:tabedit<Space>
 " go to tab page N:
@@ -342,4 +337,23 @@ augroup END
 nnoremap <leader>fo :FormatCode<CR>
 nnoremap <leader>fl :FormatLines<CR>
 vnoremap <leader>fl :FormatLines<CR>
+
+" vim-submode
+call submode#enter_with('change_tab', 'n', '', 'th', ':tabprev<CR>')
+call submode#enter_with('change_tab', 'n', '', 'tl', ':tabnext<CR>')
+call submode#map('change_tab', 'n', '', 'h', ':tabprev<CR>')
+call submode#map('change_tab', 'n', '', 'l', ':tabnext<CR>')
+call submode#enter_with('move_tab', 'n', '', 'Th', ':-tabmove<CR>')
+call submode#enter_with('move_tab', 'n', '', 'Tl', ':+tabmove<CR>')
+call submode#map('move_tab', 'n', '', 'h', ':-tabmove<CR>')
+call submode#map('move_tab', 'n', '', 'l', ':+tabmove<CR>')
+call submode#enter_with('resize_split', 'n', '', '<C-w>h', '<C-w><')
+call submode#enter_with('resize_split', 'n', '', '<C-w>l', '<C-w>>')
+call submode#enter_with('resize_split', 'n', '', '<C-w>k', '<C-w>+')
+call submode#enter_with('resize_split', 'n', '', '<C-w>j', '<C-w>-')
+call submode#map('resize_split', 'n', '', 'h', '<C-w><')
+call submode#map('resize_split', 'n', '', 'l', '<C-w>>')
+call submode#map('resize_split', 'n', '', 'k', '<C-w>+')
+call submode#map('resize_split', 'n', '', 'j', '<C-w>-')
+let g:submode_keep_leaving_key = 1
 
