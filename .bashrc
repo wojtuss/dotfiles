@@ -136,6 +136,9 @@ PROMPT_COMMAND='set_my_PS'
 #unset color_prompt force_color_prompt
 
 
+# custom bash command line shortcuts (handled by readline)
+export INPUTRC=~/.inputrc
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)

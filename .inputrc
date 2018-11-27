@@ -1,0 +1,17 @@
+$include /etc/inputrc
+set convert-meta on
+# set editing-mode vi
+# set keymap vi-command
+
+"\M-h": nop
+"\M-l": nop
+"\M-h": backward-char 
+"\M-l": forward-char
+
+"\C-\M-h": nop
+"\C-\M-l": nop
+"\C-\M-h": backward-word
+"\C-\M-l": forward-word
+
+
+
