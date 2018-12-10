@@ -34,6 +34,8 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+command! -nargs=1 Diffvsplit vert diffsplit <args>
+
 " Change every backslash to a slash
 " nnoremap <silent> <Leader>/ :let tmp=@/<Bar>s:\\:/:ge<Bar>let @/=tmp<Bar>noh<CR>
 " Change every slash to a backslash
@@ -61,8 +63,8 @@ set splitright
 " Easier tab navigation
 nnoremap th	:tabprev<CR>
 nnoremap tl	:tabnext<CR>	" gt
-nnoremap tk	:tabfirst<CR>	" gT
-nnoremap tj	:tablast<CR>
+nnoremap t0	:tabfirst<CR>	" gT
+nnoremap t$	:tablast<CR>
 nnoremap tn	:tabnew<CR>
 " Moving tabs to the left/right
 nnoremap Th	:-tabmove<CR>
