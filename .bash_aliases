@@ -114,6 +114,13 @@ alias td='tmux detach'
 # YouCompleteMe
 alias cmake_ycm='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 
+# andki-slideshow
+anki-slideshow() {
+	cd /home/wojtuss/Apps/anki-slideshow
+	rackup -p4567
+	cd -
+}
+
 # xdot
 xdot() {
 	/usr/bin/xdot $@ &
