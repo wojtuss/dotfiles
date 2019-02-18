@@ -208,6 +208,7 @@ __git_complete ga _git_add
 __git_complete gb _git_branch
 __git_complete go _git_checkout
 __git_complete gd _git_diff
+__git_complete gdt _git_difftool
 __git_complete gl _git_log
 __git_complete gf _git_fetch
 __git_complete grb _git_rebase
