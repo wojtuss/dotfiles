@@ -25,6 +25,8 @@ alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # alias gitk='gitk --all& '
 alias gk='gitk '
 alias gs='git status '
+# gs without untracked-files: git status --untracked-files=no
+alias gst='git status -uno'
 alias ga='git add '
 alias gb='git branch '
 alias gc='git commit -m '
