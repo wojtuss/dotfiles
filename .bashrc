@@ -10,14 +10,15 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+# HISTCONTROL=ignoreboth
+HISTCONTROL=ignoredups:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -124,6 +125,10 @@ set_my_PS() {
     fi
 
     timer_stop
+    # save and reload the history so it could be shared between terminals
+    history -a
+    history -c
+    history -r
     PS1+="$Reset($timer_show)] "
     PS1+="${Green}${my_name}@\h${Reset}:${Blue}\w${Reset}"
     PS1+=$(__git_ps1 " (%s)")
