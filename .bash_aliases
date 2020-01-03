@@ -83,6 +83,10 @@ alias cf='config fetch'
 alias cpull='config pull'
 alias cpush='config push'
 
+# turbo boost setting
+alias turbo_check='cat /sys/devices/system/cpu/intel_pstate/no_turbo'
+alias turbo_enable='echo "0" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
+alias turbo_disable='echo "1" | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
 
 alias sudolast='sudo $(history -p \!\!)'
 alias psg='ps ax | grep'
