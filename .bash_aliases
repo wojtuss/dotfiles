@@ -60,6 +60,14 @@ alias gpfo='gpf origin HEAD'
 alias gg='git grep'
 # list files modified in the commit:
 alias gdtr='git diff-tree -r --no-commit-id --name-only'
+# git stash commands
+alias gslist='git stash list'
+alias gsshow='git stash show'
+alias gspush='git stash push -m'
+alias gspushki='git stash push --keep-index -m'
+alias gspop='git stash pop'
+alias gsapply='git stash apply'
+alias gsclear='git stash clear'
 
 
 alias cs='config status'
