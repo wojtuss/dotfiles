@@ -146,3 +146,8 @@ meld() {
 	/usr/bin/meld $@ &
 }
 
+# ccache
+set_ccache_dir() {
+	ccache_dir=$(readlink -f $1)
+	export CCACHE_DIR=${ccache_dir}
+}
