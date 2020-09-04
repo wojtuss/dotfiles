@@ -303,7 +303,10 @@ nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
-nnoremap <leader>gy :YcmCompleter GetType<CR>
+nnoremap <leader>et :YcmCompleter GetType<CR>
+nnoremap <leader>ed :YcmCompleter GetDoc<CR>
+nnoremap <leader>di :YcmCompleter DebugInfo<CR>
+nnoremap <leader>rr :YcmCompleter RefactorRename 
 
 " listtoggle
 let g:lt_quickfix_list_toggle_map = '<F3>'

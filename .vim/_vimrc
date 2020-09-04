@@ -25,7 +25,8 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
-Plugin 'Valloric/YouCompleteMe'
+" Installed manually (Pathogen):
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'valloric/listtoggle'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'scrooloose/nerdcommenter'
