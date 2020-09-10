@@ -79,9 +79,21 @@ alias cdiff='config diff'
 alias cdt='config difftool'
 alias co='config checkout'
 alias cl='config log'
-alias cf='config fetch'
+# cf is used by clang-format
+# alias cf='config fetch'
 alias cpull='config pull'
 alias cpush='config push'
+
+unalias cf &>/dev/null
+# clang-format
+cf() {
+	for FILE in $(git diff --cached --name-only)
+	do
+		if [[ $FILE == "*\.(c|h|cpp|cc|hpp)" ]]; then
+			clang-format -style=file -i $FILE
+		fi
+	done
+}
 
 # turbo boost setting
 alias turbo_check='cat /sys/devices/system/cpu/intel_pstate/no_turbo'

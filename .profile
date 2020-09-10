@@ -18,7 +18,7 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="/usr/lib/ccache:$HOME/bin:$HOME/.local/bin:$HOME/klocwork-client/bin:$PATH"
+    PATH="$HOME/bin:$HOME/.local/bin:$HOME/klocwork-client/bin:$PATH"
 fi
 
 PATH="$PATH:$HOME/.dropbox-dist"
