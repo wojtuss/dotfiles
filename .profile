@@ -23,6 +23,10 @@ fi
 
 PATH="$PATH:$HOME/.dropbox-dist"
 
+if [ -d "$HOME/Apps/Clang-3.8/bin" ]; then
+    PATH="$HOME/Apps/Clang-3.8/bin:$PATH"
+fi
+
 export PATH="/usr/lib/ccache:$PATH"
 
 # Setting http_proxy doesn't work below
