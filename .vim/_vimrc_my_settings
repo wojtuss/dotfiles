@@ -89,7 +89,7 @@ nnoremap tf	<C-w>gf
 " and jump to the line number following the file name.
 nnoremap tF	<C-w>gF
 " switch to the existing tab if the buffer is open, or create a new one if not
-set switchbuf=usetab,newtab
+set switchbuf+=usetab,newtab
 
 
 " Jump to the matching object (parenthesis, brackets, etc.) and visually select all the text in between
@@ -295,6 +295,7 @@ set path=.,**
 
 
 " You Complete Me (YCM)
+let g:ycm_always_populate_location_list = 1
 nnoremap <leader>rs :YcmRestartServer<CR>
 nnoremap <leader>fc :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
@@ -305,12 +306,15 @@ nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <leader>et :YcmCompleter GetType<CR>
 nnoremap <leader>ed :YcmCompleter GetDoc<CR>
-nnoremap <leader>di :YcmCompleter DebugInfo<CR>
 nnoremap <leader>rr :YcmCompleter RefactorRename 
 
 " listtoggle
 let g:lt_quickfix_list_toggle_map = '<F3>'
 let g:lt_location_list_toggle_map = '<F4>'
+
+" close scratch buffer/preview window
+" nnoremap pclose = '<F10>'
+" inoremap pclose = '<F10>'
 
 " Global Gtags
 nnoremap <leader>r :GtagsCursor<CR> :copen<CR>
@@ -366,4 +370,5 @@ call submode#map('resize_split', 'n', '', 'l', '<C-w>>')
 call submode#map('resize_split', 'n', '', 'k', '<C-w>+')
 call submode#map('resize_split', 'n', '', 'j', '<C-w>-')
 let g:submode_keep_leaving_key = 1
+let g:submode_timeoutlen = 250
 
