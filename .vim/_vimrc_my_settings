@@ -61,9 +61,9 @@ set splitbelow
 set splitright
 
 " Easier tab navigation
-nnoremap th	:tabprev<CR>
+nnoremap th	:tabprev<CR>	" gT
 nnoremap tl	:tabnext<CR>	" gt
-nnoremap t0	:tabfirst<CR>	" gT
+nnoremap t0	:tabfirst<CR>
 nnoremap t$	:tablast<CR>
 nnoremap tn	:tabnew<CR>
 " Moving tabs to the left/right
@@ -81,6 +81,13 @@ nnoremap tg	:tabn<Space>
 " Use zero to make the current tab page the first one.
 " Without N the tab page is made the last one.
 nnoremap tm	:tabm<Space>
+
+" Switch to last-active tab
+if !exists('g:lasttab')
+  let g:lasttab = 1
+endif
+nnoremap t<Tab> :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 nnoremap td	:tabclose<CR>
 " Open a new tab page and edit the file name under the cursor.
