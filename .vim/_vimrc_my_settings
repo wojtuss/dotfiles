@@ -52,10 +52,10 @@ nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 ":au BufAdd,BufNewFile,BufRead * nested tab sball
 
 " Easier split navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 set splitbelow
 set splitright
@@ -368,10 +368,10 @@ call submode#enter_with('move_tab', 'n', '', 'Th', ':-tabmove<CR>')
 call submode#enter_with('move_tab', 'n', '', 'Tl', ':+tabmove<CR>')
 call submode#map('move_tab', 'n', '', 'h', ':-tabmove<CR>')
 call submode#map('move_tab', 'n', '', 'l', ':+tabmove<CR>')
-call submode#enter_with('resize_split', 'n', '', '<C-w>h', '<C-w><')
-call submode#enter_with('resize_split', 'n', '', '<C-w>l', '<C-w>>')
-call submode#enter_with('resize_split', 'n', '', '<C-w>k', '<C-w>+')
-call submode#enter_with('resize_split', 'n', '', '<C-w>j', '<C-w>-')
+silent! call submode#enter_with('resize_split', 'n', '', '<C-w>h', '<C-w><')
+silent! call submode#enter_with('resize_split', 'n', '', '<C-w>l', '<C-w>>')
+silent! call submode#enter_with('resize_split', 'n', '', '<C-w>k', '<C-w>+')
+silent! call submode#enter_with('resize_split', 'n', '', '<C-w>j', '<C-w>-')
 call submode#map('resize_split', 'n', '', 'h', '<C-w><')
 call submode#map('resize_split', 'n', '', 'l', '<C-w>>')
 call submode#map('resize_split', 'n', '', 'k', '<C-w>+')
