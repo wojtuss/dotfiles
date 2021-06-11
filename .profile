@@ -18,44 +18,17 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$HOME/.local/bin:$HOME/klocwork-client/bin:$PATH"
+    PATH="$HOME/bin:$PATH"
 fi
 
-PATH="$PATH:$HOME/.dropbox-dist"
-
-if [ -d "$HOME/Apps/Clang-3.8/bin" ]; then
-    PATH="$HOME/Apps/Clang-3.8/bin:$PATH"
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 export PATH="/usr/lib/ccache:$PATH"
 
-# Setting http_proxy doesn't work below
-#https_proxy='proxy-chain.intel.com:911'
-#export $https_proxy
-#http_proxy='http://proxy-chain.intel.com:911'
-#export $http_proxy
 
 # SSH settings: starting ssh-agent
 SSH_ENV="$HOME/.ssh/environment"
-
-function start_agent {
-    echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
-
-# Source SSH settings, if applicable
-
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
 
