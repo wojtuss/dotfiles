@@ -145,6 +145,9 @@ let g:easytags_async = 1
 " disable folding
 set nofoldenable
 
+" disable beep
+set visualbell
+
 " MY OPTIONS:
 source ~/.vim/_vimrc_my_settings
 

@@ -107,20 +107,8 @@ alias psg='ps ax | grep'
 alias reload_bash='. ~/.bashrc'
 alias .b='. ~/.bashrc'
 
-if [ -f ~/.bash_aliases_NVML ]; then
-	. ~/.bash_aliases_NVML
-fi
-
-if [ -f ~/.bash_aliases_SB ]; then
-	. ~/.bash_aliases_SB
-fi
-
-if [ -f ~/.bash_aliases_AIPG ]; then
-    . ~/.bash_aliases_AIPG
-fi
-
-if [ -f ~/.bash_aliases_paddle ]; then
-    . ~/.bash_aliases_paddle
+if [ -f ~/.bash_aliases_lux ]; then
+	. ~/.bash_aliases_lux
 fi
 
 # TensorFlow
@@ -164,3 +152,7 @@ set_ccache_dir() {
 	ccache_dir=$(readlink -f $1)
 	export CCACHE_DIR=${ccache_dir}
 }
+
+# jupyter notebook
+alias jn='jupyter notebook'
+
