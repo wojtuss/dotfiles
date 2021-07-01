@@ -12,6 +12,11 @@ inoremap <S-Space> <Esc>`^
 nnoremap → i
 inoremap → <Esc>`^
 
+" Reload .vimrc
+if !exists(":Vimrc")
+  command Vimrc source ~/.vimrc
+endif
+
 " remove delay after Esc
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -65,7 +70,7 @@ nnoremap th	:tabprev<CR>	" gT
 nnoremap tl	:tabnext<CR>	" gt
 nnoremap t0	:tabfirst<CR>
 nnoremap t$	:tablast<CR>
-nnoremap tn	:tabnew<CR>
+nnoremap to	:tabnew<CR>
 " Moving tabs to the left/right
 nnoremap Th	:-tabmove<CR>
 nnoremap Tl	:+tabmove<CR>
@@ -76,11 +81,12 @@ nnoremap ≥	:+tabmove<CR>
 " edit specified file in a new tab:
 nnoremap te	:tabedit<Space>
 " go to tab page N:
-nnoremap tg	:tabn<Space>
+nnoremap tn	:tabn<Space>
 " Move the current tab page to after tab page N.
 " Use zero to make the current tab page the first one.
 " Without N the tab page is made the last one.
 nnoremap tm	:tabm<Space>
+nnoremap tw	:tabs<CR>
 
 " Switch to last-active tab
 if !exists('g:lasttab')
@@ -303,6 +309,8 @@ set path=.,**
 
 " You Complete Me (YCM)
 let g:ycm_always_populate_location_list = 1
+" Do not show doc in popup automaticaly. Use GetDoc instead.
+let g:ycm_auto_hover = ''
 nnoremap <leader>rs :YcmRestartServer<CR>
 nnoremap <leader>fc :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
@@ -320,8 +328,8 @@ let g:lt_quickfix_list_toggle_map = '<F3>'
 let g:lt_location_list_toggle_map = '<F4>'
 
 " close scratch buffer/preview window
-" nnoremap pclose = '<F10>'
-" inoremap pclose = '<F10>'
+nnoremap <F10> :pclose<CR>
+inoremap <F10> :pclose<CR>
 
 " Global Gtags
 nnoremap <leader>r :GtagsCursor<CR> :copen<CR>
