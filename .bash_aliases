@@ -132,6 +132,9 @@ alias ta='tmux a -t'
 alias ts='tmux switch -t'
 alias td='tmux detach'
 
+# copy with progress indicator
+alias cp='rsync --info=progress2 -arh'
+
 # YouCompleteMe
 alias cmake_ycm='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 
