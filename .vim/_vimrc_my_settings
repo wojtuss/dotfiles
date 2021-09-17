@@ -311,13 +311,17 @@ set path=.,**
 let g:ycm_always_populate_location_list = 1
 " Do not show doc in popup automaticaly. Use GetDoc instead.
 let g:ycm_auto_hover = ''
+" Where 'GoTo*' commands result should be opened
+let g:ycm_goto_buffer_command = 'split-or-existing-window'
+" let g:ycm_goto_buffer_command = 'split'
+
 nnoremap <leader>rs :YcmRestartServer<CR>
 nnoremap <leader>fc :YcmForceCompileAndDiagnostics<CR>
-nnoremap <leader>gt :YcmCompleter GoTo<CR>
-nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gi :YcmCompleter GoToInclude<CR>
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>gt :tab YcmCompleter GoTo<CR>
+nnoremap <leader>gd :tab YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :tab YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gi :tab YcmCompleter GoToInclude<CR>
+nnoremap <leader>gr :tab YcmCompleter GoToReferences<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <leader>et :YcmCompleter GetType<CR>
 nnoremap <leader>ed :YcmCompleter GetDoc<CR>
