@@ -116,6 +116,10 @@ if [ -f ~/.bash_aliases_lux ]; then
 	. ~/.bash_aliases_lux
 fi
 
+if [ -f ~/.bash_aliases_local ]; then
+	. ~/.bash_aliases_local
+fi
+
 # TensorFlow
 alias tensorflow_activate='. ~/tensorflow/bin/activate'
 alias tensorflow_deactivate='deactivate'
