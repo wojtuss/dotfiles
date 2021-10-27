@@ -199,7 +199,9 @@ noremap <Leader>t :NERDTreeFind<CR>
 " noremap <Leader>t :NERDTreeTabsFind<CR>
 
 " The NERD Commenter
-let NERDSpaceDelims=1
+let g:NERDSpaceDelims=1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
 
 " easytags
 " open definition in a new tab
