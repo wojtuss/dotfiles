@@ -52,6 +52,7 @@ Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'vim-utils/vim-man'
 Plugin 'kana/vim-submode'
+Plugin 'cohama/lexima.vim'
 " Installed manually (Pathogen):
 " Plugin 'tmhedberg/simplyfold'
 
