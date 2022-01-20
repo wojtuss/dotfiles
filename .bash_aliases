@@ -168,6 +168,12 @@ set_ccache_dir() {
 # jupyter notebook
 alias jn='jupyter notebook'
 
+alias set_cuda0='export CUDA_VISIBLE_DEVICES="0"'
+alias set_cuda1='export CUDA_VISIBLE_DEVICES="1"'
+alias set_cuda01='export CUDA_VISIBLE_DEVICES="0,1"'
+alias set_cuda_none='export CUDA_VISIBLE_DEVICES=""'
+
 # flush dns
 alias dns_flush='sudo systemd-resolve --flush-caches'
 alias dns_statistics='sudo systemd-resolve --statistics'
+
