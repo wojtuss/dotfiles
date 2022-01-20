@@ -168,3 +168,6 @@ set_ccache_dir() {
 # jupyter notebook
 alias jn='jupyter notebook'
 
+# flush dns
+alias dns_flush='sudo systemd-resolve --flush-caches'
+alias dns_statistics='sudo systemd-resolve --statistics'
