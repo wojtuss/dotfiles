@@ -177,3 +177,17 @@ alias set_cuda_none='export CUDA_VISIBLE_DEVICES=""'
 alias dns_flush='sudo systemd-resolve --flush-caches'
 alias dns_statistics='sudo systemd-resolve --statistics'
 
+# huion tablet
+wacom_list() {
+	xsetwacom --list
+}
+
+wacom_next() {
+	line="$(xsetwacom --list | grep STYLUS)"
+	tokens=($line)
+	xsetwacom set ${tokens[4]} MapToOutput next
+}
+
+alias huion_list='wacom_list'
+alias huion_next='wacom_next'
+
