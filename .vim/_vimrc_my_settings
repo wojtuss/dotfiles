@@ -127,7 +127,7 @@ set clipboard=unnamed
 set updatetime=250
 
 " Show 80th line mark
-set colorcolumn=81
+set colorcolumn=121
 
 " Highlight the line with cursor
 set cursorline
