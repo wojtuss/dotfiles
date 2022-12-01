@@ -27,8 +27,10 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="/usr/lib/ccache:$PATH"
+export PATH="/usr/local/cuda/bin:$PATH"
 
 
 # SSH settings: starting ssh-agent
 SSH_ENV="$HOME/.ssh/environment"
 
+export HISTTIMEFORMAT="%d/%m/%y %T "
