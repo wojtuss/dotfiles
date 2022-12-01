@@ -34,3 +34,7 @@ export PATH="/usr/local/cuda/bin:$PATH"
 SSH_ENV="$HOME/.ssh/environment"
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
+
+# For python to enable OpenEXR in cv2
+export OPENCV_IO_ENABLE_OPENEXR=1
+

@@ -210,9 +210,6 @@ export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
     vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'set nonumber' -c 'set cc=' -\""
 
-# For python to enable OpenEXR in cv2
-export OPENCV_IO_ENABLE_OPENEXR=1
-
 source ~/.git-completion.bash
 __git_complete gs _git_status
 __git_complete ga _git_add
