@@ -192,3 +192,4 @@ wacom_next() {
 alias huion_list='wacom_list'
 alias huion_next='wacom_next'
 
+alias set_hydra_full_error='export HYDRA_FULL_ERROR=1'
