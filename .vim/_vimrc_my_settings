@@ -197,6 +197,7 @@ nnoremap <F6> :NERDTreeToggle<CR>
 noremap <Leader>t :NERDTreeFind<CR>
 " nnoremap <F6> :NERDTreeTabsToggle<CR>
 " noremap <Leader>t :NERDTreeTabsFind<CR>
+let NERDTreeIgnore=['\.swp$', '\.swo$']
 
 " The NERD Commenter
 let g:NERDSpaceDelims=1
