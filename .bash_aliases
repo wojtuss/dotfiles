@@ -170,8 +170,25 @@ alias jn='jupyter notebook'
 
 alias set_cuda0='export CUDA_VISIBLE_DEVICES="0"'
 alias set_cuda1='export CUDA_VISIBLE_DEVICES="1"'
-alias set_cuda01='export CUDA_VISIBLE_DEVICES="0,1"'
+alias set_cuda_all='export CUDA_VISIBLE_DEVICES="0,1"'
 alias set_cuda_none='export CUDA_VISIBLE_DEVICES=""'
+alias unset_cuda_visible_devices='unset CUDA_VISIBLE_DEVICES'
+
+alias set_rocr0='export ROCR_VISIBLE_DEVICES="0"'
+alias set_rocr1='export ROCR_VISIBLE_DEVICES="1"'
+alias set_rocr2='export ROCR_VISIBLE_DEVICES="2"'
+alias set_rocr3='export ROCR_VISIBLE_DEVICES="3"'
+alias set_rocr_all='export ROCR_VISIBLE_DEVICES="0,1,2,3"'
+alias set_rocr_none='export ROCR_VISIBLE_DEVICES=""'
+alias unset_rocr_visible_devices='unset ROCR_VISIBLE_DEVICES'
+
+alias set_hip0='export HIP_VISIBLE_DEVICES="0"'
+alias set_hip1='export HIP_VISIBLE_DEVICES="1"'
+alias set_hip2='export HIP_VISIBLE_DEVICES="2"'
+alias set_hip3='export HIP_VISIBLE_DEVICES="3"'
+alias set_hip_all='export HIP_VISIBLE_DEVICES="0,1,2,3"'
+alias set_hip_none='export HIP_VISIBLE_DEVICES=""'
+alias unset_hip_visible_devices='unset HIP_VISIBLE_DEVICES'
 
 # flush dns
 alias dns_flush='sudo systemd-resolve --flush-caches'
