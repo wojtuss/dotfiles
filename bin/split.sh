@@ -31,7 +31,7 @@ else
 	mp3splt \
 		-c "${cue_file}" \
 		-d "${temp_dir}" \
-		-o "@t" \
+		-o "@n-@t" \
 		-q \
 		"${mp3_file}"
 
