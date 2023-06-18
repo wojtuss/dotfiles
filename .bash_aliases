@@ -168,3 +168,45 @@ set_ccache_dir() {
 # jupyter notebook
 alias jn='jupyter notebook'
 
+alias set_cuda0='export CUDA_VISIBLE_DEVICES="0"'
+alias set_cuda1='export CUDA_VISIBLE_DEVICES="1"'
+alias set_cuda_all='export CUDA_VISIBLE_DEVICES="0,1"'
+alias set_cuda_none='export CUDA_VISIBLE_DEVICES=""'
+alias unset_cuda_visible_devices='unset CUDA_VISIBLE_DEVICES'
+
+alias set_rocr0='export ROCR_VISIBLE_DEVICES="0"'
+alias set_rocr1='export ROCR_VISIBLE_DEVICES="1"'
+alias set_rocr2='export ROCR_VISIBLE_DEVICES="2"'
+alias set_rocr3='export ROCR_VISIBLE_DEVICES="3"'
+alias set_rocr_all='export ROCR_VISIBLE_DEVICES="0,1,2,3"'
+alias set_rocr_none='export ROCR_VISIBLE_DEVICES=""'
+alias unset_rocr_visible_devices='unset ROCR_VISIBLE_DEVICES'
+
+alias set_hip0='export HIP_VISIBLE_DEVICES="0"'
+alias set_hip1='export HIP_VISIBLE_DEVICES="1"'
+alias set_hip2='export HIP_VISIBLE_DEVICES="2"'
+alias set_hip3='export HIP_VISIBLE_DEVICES="3"'
+alias set_hip_all='export HIP_VISIBLE_DEVICES="0,1,2,3"'
+alias set_hip_none='export HIP_VISIBLE_DEVICES=""'
+alias unset_hip_visible_devices='unset HIP_VISIBLE_DEVICES'
+
+# flush dns
+alias dns_flush='sudo systemd-resolve --flush-caches'
+alias flush_dns=dns_flush
+alias dns_statistics='sudo systemd-resolve --statistics'
+
+# huion tablet
+wacom_list() {
+	xsetwacom --list
+}
+
+wacom_next() {
+	line="$(xsetwacom --list | grep STYLUS)"
+	tokens=($line)
+	xsetwacom set ${tokens[4]} MapToOutput next
+}
+
+alias huion_list='wacom_list'
+alias huion_next='wacom_next'
+
+alias set_hydra_full_error='export HYDRA_FULL_ERROR=1'
