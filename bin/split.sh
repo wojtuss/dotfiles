@@ -31,14 +31,14 @@ else
 	mp3splt \
 		-c "${cue_file}" \
 		-d "${temp_dir}" \
-		-o "@n-@t" \
+		-o "@n3-@t" \
 		-q \
 		"${mp3_file}"
 
 	for FILE in "${temp_dir}"; do
 		mp3splt \
 			-d "${out_dir}" \
-			-o "@f-@n" \
+			-o "@f-@n3" \
 			-t "1.0" \
 			-q \
 			"$FILE"
