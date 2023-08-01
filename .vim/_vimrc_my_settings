@@ -127,7 +127,12 @@ set clipboard=unnamed
 set updatetime=250
 
 " Show 80th line mark
-set colorcolumn=121
+" set colorcolumn=121
+augroup MyColorColumnGroup
+	autocmd!
+	autocmd BufEnter * set colorcolumn=121
+augroup END
+
 
 " Highlight the line with cursor
 set cursorline
