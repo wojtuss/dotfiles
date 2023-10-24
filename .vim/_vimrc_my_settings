@@ -121,7 +121,7 @@ set number
 set scrolloff=10
 
 " Let all vim sessions share the same X selection buffer
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " vim-gitgutter
 set updatetime=250
@@ -197,6 +197,7 @@ nnoremap <F6> :NERDTreeToggle<CR>
 noremap <Leader>t :NERDTreeFind<CR>
 " nnoremap <F6> :NERDTreeTabsToggle<CR>
 " noremap <Leader>t :NERDTreeTabsFind<CR>
+let NERDTreeIgnore=['\.swo$', '\.swp$']
 
 " The NERD Commenter
 let g:NERDSpaceDelims=1
@@ -373,6 +374,14 @@ nnoremap <leader>fo :FormatCode<CR>
 nnoremap <leader>fl :FormatLines<CR>
 vnoremap <leader>fl :FormatLines<CR>
 
+"vim-signature
+" nmap m<S-Tab> ['
+" nmap m<Tab> ]'
+" nnoremap '. ]'
+" nnoremap `, [`
+" nnoremap `. ]`
+" let g:SignatureMap = {'GotoNextLineByPos' : "<leader>mn", 'GotoPrevLineByPos' : "<leader>mp"}
+
 " vim-submode
 call submode#enter_with('change_tab', 'n', '', 'th', ':tabprev<CR>')
 call submode#enter_with('change_tab', 'n', '', 'tl', ':tabnext<CR>')
@@ -390,6 +399,13 @@ call submode#map('resize_split', 'n', '', 'h', '<C-w><')
 call submode#map('resize_split', 'n', '', 'l', '<C-w>>')
 call submode#map('resize_split', 'n', '', 'k', '<C-w>+')
 call submode#map('resize_split', 'n', '', 'j', '<C-w>-')
+" call submode#enter_with('go_to_mark', 'n', '', '`.', ']`')
+" call submode#enter_with('go_to_mark', 'n', '', '`,', '[`')
+" call submode#enter_with('go_to_mark_line', 'n', '', 'm<S-Tab>', 'm<S-Tab>')
+" call submode#enter_with('go_to_mark_line', 'n', '', 'm<Tab>', 'm<Tab>')
+" call submode#map('go_to_mark', 'n', '', '.', ']`')
+" call submode#map('go_to_mark', 'n', '', ',', '[`')
+" call submode#map('go_to_mark_line', 'n', '', '<S-Tab>', 'm<S-Tab>')
+" call submode#map('go_to_mark_line', 'n', '', '<Tab>', 'm<Tab>')
 let g:submode_keep_leaving_key = 1
 let g:submode_timeoutlen = 250
-
