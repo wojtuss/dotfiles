@@ -38,3 +38,5 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 # For python to enable OpenEXR in cv2
 export OPENCV_IO_ENABLE_OPENEXR=1
 
+# For Go
+export PATH="/usr/local/go/bin:$PATH"
