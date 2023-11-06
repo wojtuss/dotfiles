@@ -217,6 +217,7 @@ nnoremap <silent> <Leader><C-]> <C-w><C-]><C-w>T
 let g:pymode = 1
 let g:pymode_motion = 1
 " nnoremap <F3> :let g:pymode = 1 - g:pymode<Bar>echo "g:pymode =" g:pymode<CR>
+let g:pymode_options_max_line_length = 120
 
 " SimplyLFold
 let g:SimplylFold_docstring_preview = 1
@@ -372,7 +373,8 @@ autocmd FileType go AutoFormatBuffer gofmt
 autocmd FileType gn AutoFormatBuffer gn
 autocmd FileType html,css,json AutoFormatBuffer js-beautify
 autocmd FileType java AutoFormatBuffer google-java-format
-autocmd FileType python AutoFormatBuffer yapf
+" autocmd FileType python AutoFormatBuffer yapf
+autocmd FileType python AutoFormatBuffer black
 " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 nnoremap <leader>fo :FormatCode<CR>
