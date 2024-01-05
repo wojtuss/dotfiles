@@ -233,3 +233,6 @@ __git_complete gg _git_grep
 
 # added by travis gem
 [ -f /home/wojtuss/.travis/travis.sh ] && source /home/wojtuss/.travis/travis.sh
+
+# Set breakpoint() in Python to call pudb
+export PYTHONBREAKPOINT="pudb.set_trace"
