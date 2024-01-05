@@ -87,6 +87,15 @@ nnoremap tn	:tabn<Space>
 " Without N the tab page is made the last one.
 nnoremap tm	:tabm<Space>
 nnoremap tw	:tabs<CR>
+nnoremap t1	:tabn<Space>1<CR>
+nnoremap t2	:tabn<Space>2<CR>
+nnoremap t3	:tabn<Space>3<CR>
+nnoremap t4	:tabn<Space>4<CR>
+nnoremap t5	:tabn<Space>5<CR>
+nnoremap t6	:tabn<Space>6<CR>
+nnoremap t7	:tabn<Space>7<CR>
+nnoremap t8	:tabn<Space>8<CR>
+nnoremap t9	:tabn<Space>9<CR>
 
 " Switch to last-active tab
 if !exists('g:lasttab')
