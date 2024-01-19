@@ -278,6 +278,8 @@ if &diff
 	map q :qa<CR>
 	syntax off
 	colorscheme mycolorscheme
+else
+	colorscheme mycode
 endif
 
 " Change cursor shape in different modes
