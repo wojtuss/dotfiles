@@ -171,6 +171,11 @@ nnoremap ” mzo<Esc>`zdmz
 " Find visually selected text
 vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 
+" Select the current/next highlighted text (last/next search match)
+nnoremap sh :normal! gn<CR>
+" Change the current/next highlighted text (last/next search match)
+nnoremap ch :normal! gn<CR>c
+
 " vim-smooth-scroll
 nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
 nnoremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
