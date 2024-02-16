@@ -190,6 +190,8 @@ alias set_hip_all='export HIP_VISIBLE_DEVICES="0,1,2,3"'
 alias set_hip_none='export HIP_VISIBLE_DEVICES=""'
 alias unset_hip_visible_devices='unset HIP_VISIBLE_DEVICES'
 
+alias set_mfm='MIOPEN_FIND_MODE=1'
+
 # flush dns
 alias dns_flush='sudo systemd-resolve --flush-caches'
 alias flush_dns=dns_flush
