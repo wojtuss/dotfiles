@@ -212,3 +212,7 @@ alias huion_list='wacom_list'
 alias huion_next='wacom_next'
 
 alias set_hydra_full_error='export HYDRA_FULL_ERROR=1'
+alias set_miopen_find_mode='export MIOPEN_FIND_MODE=1'
+alias get_rocm_version='apt show rocm-libs -a'
+alias get_cuda_version='nvcc --version'
+alias get_available_gpus='sudo lshw -C display'

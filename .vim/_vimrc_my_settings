@@ -142,12 +142,6 @@ augroup MyColorColumnGroup
 	autocmd BufEnter * set colorcolumn=121
 augroup END
 
-
-" Highlight the line with cursor
-set cursorline
-hi CursorLine cterm=NONE ctermbg=235
-" for colors see http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-
 " File explorer
 ""nnoremap <C-A-e> :Explore<CR>
 ""nnoremap <C-A-r> :Rexplore<CR>
@@ -277,14 +271,21 @@ nnoremap <S-m-h> :cscope find c <cword><CR>
 " For Vim to be your default man pages viewer (+ changes in .bashrc)
 let $PAGER=''
 
+" Highlight the line with cursor
+set cursorline
+
 " Git: quit from difftool
 if &diff
 	map Q :cquit<CR>
 	map q :qa<CR>
 	syntax off
 	colorscheme mycolorscheme
+	hi CursorLine cterm=NONE ctermbg=NONE
 else
 	colorscheme mycode
+	hi CursorLine cterm=NONE ctermbg=235
+	" for colors see http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+
 endif
 
 " Change cursor shape in different modes
