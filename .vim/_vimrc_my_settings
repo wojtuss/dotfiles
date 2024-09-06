@@ -433,3 +433,9 @@ call submode#map('resize_split', 'n', '', 'j', '<C-w>-')
 " call submode#map('go_to_mark_line', 'n', '', '<Tab>', 'm<Tab>')
 let g:submode_keep_leaving_key = 1
 let g:submode_timeoutlen = 250
+
+" copilot
+" Fix the issue with the Tab key
+imap <silent><script><expr> <Tab> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
