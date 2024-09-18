@@ -182,13 +182,19 @@ alias set_rocr_all='export ROCR_VISIBLE_DEVICES="0,1,2,3"'
 alias set_rocr_none='export ROCR_VISIBLE_DEVICES=""'
 alias unset_rocr_visible_devices='unset ROCR_VISIBLE_DEVICES'
 
+set_hip() {
+	export HIP_VISIBLE_DEVICES="$1"
+}
+
 alias set_hip0='export HIP_VISIBLE_DEVICES="0"'
 alias set_hip1='export HIP_VISIBLE_DEVICES="1"'
 alias set_hip2='export HIP_VISIBLE_DEVICES="2"'
 alias set_hip3='export HIP_VISIBLE_DEVICES="3"'
 alias set_hip_all='export HIP_VISIBLE_DEVICES="0,1,2,3"'
 alias set_hip_none='export HIP_VISIBLE_DEVICES=""'
-alias unset_hip_visible_devices='unset HIP_VISIBLE_DEVICES'
+alias set_hip_unset='unset HIP_VISIBLE_DEVICES'
+
+alias get_hip='echo $HIP_VISIBLE_DEVICES'
 
 alias set_mfm='MIOPEN_FIND_MODE=1'
 

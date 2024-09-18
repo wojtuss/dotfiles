@@ -68,8 +68,8 @@ set splitright
 " Easier tab navigation
 nnoremap th	:tabprev<CR>	" gT
 nnoremap tl	:tabnext<CR>	" gt
-nnoremap t0	:tabfirst<CR>
-nnoremap t$	:tablast<CR>
+nnoremap t,	:tabfirst<CR>
+nnoremap t.	:tablast<CR>
 nnoremap to	:tabnew<CR>
 " Moving tabs to the left/right
 nnoremap Th	:-tabmove<CR>
@@ -96,6 +96,16 @@ nnoremap t6	:tabn<Space>6<CR>
 nnoremap t7	:tabn<Space>7<CR>
 nnoremap t8	:tabn<Space>8<CR>
 nnoremap t9	:tabn<Space>9<CR>
+nnoremap t)	:tabn<Space>10<CR>
+nnoremap t!	:tabn<Space>11<CR>
+nnoremap t@	:tabn<Space>12<CR>
+nnoremap t#	:tabn<Space>13<CR>
+nnoremap t$	:tabn<Space>14<CR>
+nnoremap t%	:tabn<Space>15<CR>
+nnoremap t^	:tabn<Space>16<CR>
+nnoremap t&	:tabn<Space>17<CR>
+nnoremap t*	:tabn<Space>18<CR>
+nnoremap t(	:tabn<Space>19<CR>
 
 " Switch to last-active tab
 if !exists('g:lasttab')
