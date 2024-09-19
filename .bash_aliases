@@ -222,3 +222,13 @@ alias set_miopen_find_mode='export MIOPEN_FIND_MODE=1'
 alias get_rocm_version='apt show rocm-libs -a'
 alias get_cuda_version='nvcc --version'
 alias get_available_gpus='sudo lshw -C display'
+
+# set CPU affinity for the current bash, $$ is the bash PID
+set_cpus() {
+	taskset -cp "$1" $$
+}
+alias set_cpus_0_63='set_cpus 0-63'
+alias set_cpus_64-127='set_cpus 64-127'
+# get CPU affinity for the current bash, $$ is the bash PID
+alias get_cpus='taskset -cp $$'
+
