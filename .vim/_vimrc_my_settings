@@ -449,3 +449,9 @@ let g:submode_timeoutlen = 250
 imap <silent><script><expr> <leader><Tab> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+" fugitive.vim
+command! -nargs=+ Gsplit Gvsplit <args>
+
+" set window to synchronize scrolling
+nnoremap <F11> :set scrollbind<CR>
+nnoremap <F12> :set noscrollbind<CR>
