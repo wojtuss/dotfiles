@@ -17,6 +17,10 @@ if !exists(":Vimrc")
   command Vimrc source ~/.vimrc
 endif
 
+if !exists(":reload_vimrc")
+  command ReloadVimrc source ~/.vimrc
+endif
+
 " remove delay after Esc
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -455,3 +459,20 @@ command! -nargs=+ Gsplit Gvsplit <args>
 " set window to synchronize scrolling
 nnoremap <F11> :set scrollbind<CR>
 nnoremap <F12> :set noscrollbind<CR>
+
+" keep selected the pasted text
+nnoremap p p`[v`]
+nnoremap P P`[v`]
+
+" switch to insert mode from visual mode via Ctrl-i or Alt-i
+vmap <C-i> <Esc>i
+set <m-i>=i
+vnoremap <m-i> <Esc>i
+" switch to normal mode from visual mode via Ctrl-n or Alt-n
+vmap <C-n> <Esc>
+set <m-n>=n
+vnoremap <m-n> <Esc>
+" switch to normal mode from visual mode and go to the beginning/end of the
+" selection via Ctrl-h or Ctrl-l, respectively
+vmap <C-h> <Esc>`<
+vmap <C-l> <Esc>`>
