@@ -461,8 +461,9 @@ nnoremap <F11> :set scrollbind<CR>
 nnoremap <F12> :set noscrollbind<CR>
 
 " keep selected the pasted text
-nnoremap p p`[v`]
-nnoremap P P`[v`]
+" nnoremap p p`[v`]
+" nnoremap P P`[v`]
+nnoremap <leader>v `[v`]
 
 " switch to insert mode from visual mode via Ctrl-i or Alt-i
 vmap <C-i> <Esc>i
