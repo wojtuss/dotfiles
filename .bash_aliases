@@ -62,8 +62,8 @@ alias gp='git push '
 alias gpf='gp -f '
 alias gpo='gp origin HEAD'
 alias gpfo='gpf origin HEAD'
-alias gg='git grep'
-alias ggi='git grep -i'
+alias gg='git grep -n'
+alias ggi='git grep -n -i'
 # list files modified in the commit:
 alias gdtr='git diff-tree -r --no-commit-id --name-only'
 # git stash commands
@@ -190,6 +190,8 @@ alias set_hip0='export HIP_VISIBLE_DEVICES="0"'
 alias set_hip1='export HIP_VISIBLE_DEVICES="1"'
 alias set_hip2='export HIP_VISIBLE_DEVICES="2"'
 alias set_hip3='export HIP_VISIBLE_DEVICES="3"'
+alias set_hip0-3='export HIP_VISIBLE_DEVICES="0,1,2,3"'
+alias set_hip4-7='export HIP_VISIBLE_DEVICES="4,5,6,7"'
 alias set_hip_all='export HIP_VISIBLE_DEVICES="0,1,2,3"'
 alias set_hip_none='export HIP_VISIBLE_DEVICES=""'
 alias set_hip_unset='unset HIP_VISIBLE_DEVICES'
@@ -227,8 +229,15 @@ alias get_available_gpus='sudo lshw -C display'
 set_cpus() {
 	taskset -cp "$1" $$
 }
-alias set_cpus_0_63='set_cpus 0-63'
+alias set_cpus_0-63='set_cpus 0-63'
 alias set_cpus_64-127='set_cpus 64-127'
 # get CPU affinity for the current bash, $$ is the bash PID
 alias get_cpus='taskset -cp $$'
 
+# set port for accelerate
+set_accel_port() {
+	export ACCEL_PORT=$1
+}
+alias set_accel_port_1='set_accel_port 29501'
+alias set_accel_port_2='set_accel_port 29502'
+alias get_accel_port='echo $ACCEL_PORT'
