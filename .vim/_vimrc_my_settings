@@ -55,7 +55,9 @@ command! -nargs=1 Diffvsplit vert diffsplit <args>
 
 " do not move the cursor when highlighing
 " nnoremap * *``
-nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
+" nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
+nnoremap <silent> * :if @/ == '\V\<' . expand('<cword>') . '\>' <Bar> let @/ = "" <Bar> set nohlsearch <Bar> else <Bar> let @/ = '\V\<' . expand('<cword>') . '\>' <Bar> set hlsearch <Bar> endif<CR>
+
 
 " Open each buffer in its own tabpage
 ":au BufAdd,BufNewFile,BufRead * nested tab sball
@@ -247,6 +249,7 @@ nnoremap æ za
 nnoremap Æ zA
 nnoremap <F8> :set foldmethod=manual foldmethod?<CR>
 nnoremap <F9> :set foldmethod=expr foldmethod?<CR>
+autocmd FileType python setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*#'
 
 " tagbar
 nnoremap <F7> :TagbarToggle<CR>
