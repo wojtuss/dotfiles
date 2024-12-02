@@ -153,4 +153,6 @@ set visualbell
 
 " MY OPTIONS:
 source ~/.vim/_vimrc_my_settings
-
+if filereadable(expand("~/.vim/_vimrc_local"))
+  source ~/.vim/_vimrc_local
+endif
