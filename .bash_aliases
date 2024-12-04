@@ -241,3 +241,5 @@ set_accel_port() {
 alias set_accel_port_1='set_accel_port 29501'
 alias set_accel_port_2='set_accel_port 29502'
 alias get_accel_port='echo $ACCEL_PORT'
+
+alias hmm='h-m-m'
