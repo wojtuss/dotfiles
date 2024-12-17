@@ -58,7 +58,6 @@ command! -nargs=1 Diffvsplit vert diffsplit <args>
 " nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 nnoremap <silent> * :if @/ == '\V\<' . expand('<cword>') . '\>' <Bar> let @/ = "" <Bar> set nohlsearch <Bar> else <Bar> let @/ = '\V\<' . expand('<cword>') . '\>' <Bar> set hlsearch <Bar> endif<CR>
 
-
 " Open each buffer in its own tabpage
 ":au BufAdd,BufNewFile,BufRead * nested tab sball
 
@@ -185,6 +184,8 @@ vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 nnoremap sh :normal! gn<CR>
 " Change the current/next highlighted text (last/next search match)
 nnoremap ch :normal! gn<CR>c
+" Paste register 0 in place of the current/next highlighted text (last/next search match)
+nnoremap ph "_cgn<C-r>0<Esc>
 
 " vim-smooth-scroll
 nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
@@ -304,6 +305,14 @@ else
 	" for colors see http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 
 endif
+
+" vim-airline colors:
+" Set a lighter color for unselected tabs
+highlight airline_tab ctermfg=85 ctermbg=236
+" Set a lighter color for the selected tab
+" highlight airline_tabsel ctermfg=White ctermbg=Black
+" Optionally, set the filler space to match
+" highlight airline_tabfill ctermfg=DarkGray ctermbg=DarkGray
 
 " Change cursor shape in different modes
 let &t_SI = "\<Esc>[6 q"
