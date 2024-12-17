@@ -308,7 +308,7 @@ endif
 
 " vim-airline colors:
 " Set a lighter color for unselected tabs
-highlight airline_tab ctermfg=85 ctermbg=236
+highlight airline_tab ctermfg=35 ctermbg=236
 " Set a lighter color for the selected tab
 " highlight airline_tabsel ctermfg=White ctermbg=Black
 " Optionally, set the filler space to match
