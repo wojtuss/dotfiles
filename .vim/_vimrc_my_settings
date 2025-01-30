@@ -4,6 +4,9 @@ set term=xterm-256color
 
 set ttyfast
 
+" Show $ in the statusline when Obsession is active
+set statusline+=\ %{ObsessionStatus()}
+
 " Toggle normal and edit mode with Shift+Space
 " `^ makes Esc do not move the cursor to the left 
 nnoremap <S-Space> i
