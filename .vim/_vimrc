@@ -55,6 +55,7 @@ Plugin 'vim-utils/vim-man'
 Plugin 'kana/vim-submode'
 Plugin 'cohama/lexima.vim'
 Plugin 'github/copilot.vim'
+Plugin 'jpalardy/vim-slime'
 " Plugin 'instant-markdown/vim-instant-markdown'
 " Installed manually (Pathogen):
 " Plugin 'tmhedberg/simplyfold'
