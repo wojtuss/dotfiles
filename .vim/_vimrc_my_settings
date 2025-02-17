@@ -495,4 +495,11 @@ vmap <C-l> <Esc>`>
 " vim-slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+" toggle paste mode, paste mode is useful when pasting code from the
+" clipboard/vim-slim, so that the indentation is not messed up
+nnoremap <S-F9> :set paste!<CR> 
+" let g:airline_section_x = airline#section#create_right(['paste', 'filetype'])
+" let g:airline_section_b = airline#section#create(['paste'])
+" let g:airline#extensions#paste#symbol = ' [PASTE MODE] '
+
 
