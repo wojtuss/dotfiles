@@ -471,8 +471,7 @@ let g:copilot_no_tab_map = v:true
 command! -nargs=+ Gsplit Gvsplit <args>
 
 " set window to synchronize scrolling
-nnoremap <F11> :set scrollbind<CR>
-nnoremap <F12> :set noscrollbind<CR>
+nnoremap <F11> :set scrollbind!<CR>
 
 " keep selected the pasted text
 " nnoremap p p`[v`]
@@ -497,5 +496,5 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 " toggle paste mode, paste mode is useful when pasting code from the
 " clipboard/vim-slim, so that the indentation is not messed up
-noremap <leader>p :set paste!<CR> 
+nnoremap <F12> :set paste!<CR> 
 
