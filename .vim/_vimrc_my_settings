@@ -499,7 +499,3 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 " clipboard/vim-slim, so that the indentation is not messed up
 noremap <leader>p :set paste!<CR> 
 
-" let g:airline_section_x = airline#section#create_right(['paste', 'filetype'])
-" let g:airline_section_b = airline#section#create(['paste'])
-" let g:airline#extensions#paste#symbol = ' [PASTE MODE] '
-
