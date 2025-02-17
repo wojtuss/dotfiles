@@ -132,6 +132,9 @@ filetype plugin on
 " vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline_section_b = airline#section#create(['paste'])
+" let g:airline_section_x = airline#section#create_right(['paste', 'filetype'])
+" let g:airline#extensions#paste#symbol = ' [PASTE MODE] '
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
