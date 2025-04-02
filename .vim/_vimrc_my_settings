@@ -187,6 +187,8 @@ vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 nnoremap sh :normal! gn<CR>
 " Change the current/next highlighted text (last/next search match)
 nnoremap ch :normal! gn<CR>c
+" Delete the current/next highlighted text (last/next search match)
+nnoremap dh :normal! gn<CR>d
 " Paste register 0 in place of the current/next highlighted text (last/next search match)
 nnoremap ph "_cgn<C-r>0<Esc>
 
