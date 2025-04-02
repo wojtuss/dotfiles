@@ -181,7 +181,9 @@ nnoremap ” mzo<Esc>`zdmz
 " nnoremap <CR> i<CR><Esc>`^
 
 " Find visually selected text
-vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
+" vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
+" Highlight visually selected text
+vnoremap * y/\V<C-R>=escape(@", '\/')<CR><CR>
 
 " Select the current/next highlighted text (last/next search match)
 nnoremap sh :normal! gn<CR>
